@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conteiner{% endblock %}
+
+{% block body %}
+    <h1>Conteiner</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ conteiner.id }}</td>
+            </tr>
+            <tr>
+                <th>Numero</th>
+                <td>{{ conteiner.numero }}</td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td>{{ conteiner.tipo }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ conteiner.status }}</td>
+            </tr>
+            <tr>
+                <th>Categoria</th>
+                <td>{{ conteiner.categoria }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('conteiner_index') }}"class="btn btn-secondary btn-sm">Voltar</a>
+
+    <a href="{{ path('conteiner_edit', {'id': conteiner.id}) }}"class="btn btn-warning btn-sm">Editar</a>
+
+    {{ include('conteiner/_delete_form.html.twig') }}
+{% endblock %}

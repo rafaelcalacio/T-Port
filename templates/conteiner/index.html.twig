@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Conteiners{% endblock %}
+
+{% block body %}
+    <h1>Conteiners</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numero</th>
+                <th>Tipo</th>
+                <th>Status</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for conteiner in conteiners %}
+            <tr>
+                <td>{{ conteiner.id }}</td>
+                <td>{{ conteiner.numero }}</td>
+                <td>{{ conteiner.tipo }}</td>
+                <td>{{ conteiner.status }}</td>
+                <td>{{ conteiner.categoria }}</td>
+                <td>
+                    <a href="{{ path('conteiner_show', {'id': conteiner.id}) }}"class="btn btn-info btn-sm">Mostrar</a>
+                    <a href="{{ path('conteiner_edit', {'id': conteiner.id}) }}"class="btn btn-warning btn-sm">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">sem registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('conteiner_new') }}"class="btn btn-primary btn-lg">Novo</a>
+{% endblock %}

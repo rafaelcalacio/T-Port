@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nova Movimentação{% endblock %}
+
+{% block body %}
+    <h1>Criar Nova Movimentação</h1>
+
+    {{ include('movimentacao/_form.html.twig') }}
+
+    <a href="{{ path('movimentacao_index') }}"class="btn btn-secondary btn-sm">Voltar</a>
+{% endblock %}
